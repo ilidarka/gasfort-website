@@ -1,0 +1,245 @@
+@media screen and (max-width: 1170px) {
+  .content_wrapper {
+    margin: 0 15px;
+  }
+  .main_screen_wrapper {
+    flex-direction: column;
+    padding-top: 60px;
+  }
+  .main_screen_header {
+    h1 {
+      margin-bottom: 200px;
+    }
+  }
+  .consult_input {
+    flex-direction: column;
+    :nth-child(0) {
+      display: none;
+    }
+  }
+  .consult_hidden {
+    display: block;
+  }
+  .consult_item {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .main_screen_header {
+    h1 {
+      margin-bottom: 440px;
+    }
+  }
+  .content_wrapper {
+    max-width: none;
+    margin: 0 15px;
+  }
+  .header {
+    padding-top: 25px;
+  }
+  .header_logo {
+    img {
+      max-width: 80px;
+      max-height: 20px;
+    }
+  }
+  .header_socials {
+    img {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+  .header_button {
+    button {
+      max-width: 100px;
+      max-height: 26px;
+      padding: 8px 20px;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+    }
+  }
+
+  .works_header {
+    h1 {
+      font-size: 34px;
+      line-height: 56px;
+    }
+  }
+  .our_works_header {
+    margin-bottom: 40px;
+    h1 {
+      margin-bottom: 0px;
+    }
+  }
+  .works_container_top_item {
+    max-width: 390px;
+    width: 100%;
+  }
+  .works_container_bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .works_container_bottom_item {
+    width: 100%;
+    max-height: 360px;
+    max-width: 360px;
+    img {
+      width: 100%;
+    }
+  }
+  .bottom_item_container {
+    height: 260px;
+    p {
+      padding-top: 0px;
+      padding-right: 11px;
+    }
+  }
+  .bottom_item_right_container {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .buttons_container {
+    gap: 15px;
+    justify-content: flex-start;
+  }
+  .btn_gradient {
+    padding: 7px 15px;
+    font-size: 10px;
+    line-height: 12px;
+    width: 109px;
+  }
+  .column_bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35.65%, #0c0e1d 99%);
+  }
+  .column_container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tab_button {
+    top: -100px;
+  }
+  .column_item {
+    a {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+  }
+  .column_item_img_container {
+    justify-content: flex-start;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .column_item_img_container:hover {
+    a {
+      display: none;
+    }
+    .column_item_adaptiv_text {
+      position: absolute;
+      display: block;
+      left: 20px;
+      bottom: 5%;
+      z-index: 1000;
+      a {
+        position: initial;
+        display: block;
+        border: none;
+        padding: 0px 0px;
+        text-align: left;
+        text-decoration: underline;
+        text-transform: none;
+      }
+      p {
+        display: block;
+      }
+      .adaptiv_text_title {
+        font-family: "Jura", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        text-decoration-line: underline;
+        color: #ffffff;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .team {
+    margin-bottom: 100px;
+  }
+  .team_header {
+    h1 {
+      max-width: 356px;
+      font-weight: 400;
+    }
+  }
+  .numbers_container {
+    display: none;
+  }
+  .video_wrapper {
+    flex-direction: column;
+  }
+  .video_text {
+    h5 {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    p {
+      display: none;
+    }
+  }
+  .consult_wrapper {
+    padding: 60px 24px;
+  }
+  .consult_header {
+    h1 {
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 49px;
+    }
+  }
+  .footer_logo_container {
+    flex-direction: column;
+    img {
+      margin-bottom: 25px;
+      margin-left: -10px;
+    }
+  }
+
+  .footer_menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .footer_socials {
+    a {
+      width: 28px;
+      height: 28px;
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+      }
+    }
+  }
+  .contacts_wrapper {
+    flex-direction: column-reverse;
+  }
+  .contacts_container {
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+}
