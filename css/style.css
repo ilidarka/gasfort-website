@@ -85,10 +85,6 @@ h6 {
   font-weight: inherit;
 }
 
-body {
-  background-color: black;
-}
-
 button,
 p {
   font-family: "Inter", sans-serif;
@@ -98,6 +94,11 @@ h1,
 h2,
 h3 {
   font-family: "Dela Gothic One";
+}
+
+body {
+  background-image: url(../img/page-bg.png);
+  background-size: cover;
 }
 
 .content_wrapper {
@@ -497,6 +498,7 @@ h3 {
   background: linear-gradient(93.52deg, #feac5e 0.09%, #c97bcc 52.53%, #c779d0 52.54%, #4bc0c8 103.43%);
   border-radius: 50px;
   padding: 20px 40px;
+  top: -90px;
 }
 
 .column_bg {

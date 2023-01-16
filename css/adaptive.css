@@ -24,6 +24,57 @@
   .consult_item input {
     width: 100%;
   }
+  .slider_container {
+    align-items: center;
+    height: 1200px;
+  }
+  .slider_item {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: auto;
+  }
+  .slider_controll {
+    right: auto;
+  }
+  .slider_controll span {
+    display: none;
+  }
+  .slider_item_video_container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slider_item_video_container p {
+    max-width: none;
+  }
+  .slider_item_video_container video {
+    width: 100%;
+    max-height: 213px;
+  }
+  .slider_item_img_wrapper {
+    flex-direction: column;
+  }
+  .slider_item_img_wrapper :nth-child(2) {
+    display: none;
+  }
+  .slider_item_img_wrapper img {
+    width: 100%;
+    max-height: 220px;
+  }
+  .active_slide {
+    top: 10%;
+  }
+  .prev_slide {
+    left: auto;
+    transform: scale(1);
+    top: 5%;
+  }
+  .next_slide {
+    transform: scale(1);
+    z-index: 9;
+    right: auto;
+    bottom: -2%;
+  }
 }
 @media screen and (max-width: 700px) {
   .main_screen_header h1 {
