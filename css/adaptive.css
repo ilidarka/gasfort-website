@@ -5,6 +5,7 @@
   .main_screen_wrapper {
     flex-direction: column;
     padding-top: 60px;
+    padding-bottom: 0px;
   }
   .main_screen_header h1 {
     margin-bottom: 200px;
@@ -35,6 +36,7 @@
     left: auto;
   }
   .slider_controll {
+    justify-content: center;
     right: auto;
   }
   .slider_controll span {
@@ -76,6 +78,39 @@
     bottom: -2%;
   }
 }
+@media screen and (max-width: 980px) {
+  .footer_logo_container {
+    flex-direction: column;
+  }
+  .footer_logo_container img {
+    margin-bottom: 25px;
+    margin-left: -10px;
+  }
+  .footer_menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .footer_socials a {
+    width: 28px;
+    height: 28px;
+  }
+  .footer_socials a img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+  }
+  .contacts_wrapper {
+    flex-direction: column-reverse;
+  }
+  .contacts_container {
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+}
 @media screen and (max-width: 700px) {
   .main_screen_header h1 {
     margin-bottom: 440px;
@@ -102,6 +137,9 @@
     font-size: 10px;
     line-height: 12px;
     text-align: center;
+  }
+  .works {
+    margin-bottom: 100px;
   }
   .works_header h1 {
     font-size: 34px;
@@ -147,7 +185,7 @@
     justify-content: flex-start;
   }
   .btn_gradient {
-    padding: 7px 15px;
+    padding: 15px 15px;
     font-size: 10px;
     line-height: 12px;
     width: 109px;
@@ -183,7 +221,7 @@
     display: block;
     left: 20px;
     bottom: 5%;
-    z-index: 1000;
+    z-index: 4;
   }
   .column_item_img_container:hover .column_item_adaptiv_text a {
     position: initial;
@@ -198,7 +236,6 @@
     display: block;
   }
   .column_item_img_container:hover .column_item_adaptiv_text .adaptiv_text_title {
-    font-family: "Jura", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
@@ -233,36 +270,5 @@
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
-  }
-  .footer_logo_container {
-    flex-direction: column;
-  }
-  .footer_logo_container img {
-    margin-bottom: 25px;
-    margin-left: -10px;
-  }
-  .footer_menu {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 25px;
-  }
-  .footer_socials a {
-    width: 28px;
-    height: 28px;
-  }
-  .footer_socials a img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-  }
-  .contacts_wrapper {
-    flex-direction: column-reverse;
-  }
-  .contacts_container {
-    flex-direction: column;
-    gap: 35px;
-    margin-bottom: 80px;
   }
 }/*# sourceMappingURL=adaptive.css.map */

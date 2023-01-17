@@ -98,8 +98,23 @@ h3 {
   font-family: "Dela Gothic One";
 }
 body {
-  background-image: url(../img/page-bg.png);
+  background: #0c0e1d;
+  overflow-x: hidden;
+  position: relative;
+}
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+.background_main_screen {
+  position: relative;
+}
+.main-screen-bg-img {
+  position: absolute;
+  background: url(../img/main-screen-bg.svg) no-repeat;
   background-size: cover;
+  z-index: -1000;
 }
 .content_wrapper {
   max-width: 1360px;
@@ -110,7 +125,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 25px;
   margin-bottom: 100px;
 }
 
@@ -132,6 +147,8 @@ body {
 }
 
 .header_button {
+  position: sticky;
+  right: 0px;
   button {
     font-weight: 700;
     font-size: 16px;
@@ -584,7 +601,7 @@ body {
   max-width: 340px;
   margin-bottom: 40px;
   a {
-    font-family: "Jura", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
@@ -615,7 +632,7 @@ body {
   border: 1px solid rgba(199, 121, 208, 0.4);
   a {
     position: absolute;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     bottom: 20px;
     font-weight: 700;
     font-size: 16px;
@@ -711,7 +728,7 @@ body {
   video {
     width: 100%;
     height: 600px;
-    background-color: #ffffff;
+    // background-color: #ffffff;
     border: 1px solid rgba(75, 192, 200, 0.4);
     border-radius: 20px;
     position: relative;
@@ -735,7 +752,7 @@ body {
     color: #ffffff;
   }
   h5 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     line-height: 19px;
     color: #c779d0;
@@ -829,6 +846,14 @@ body {
     width: 100%;
     margin-top: 80px;
   }
+}
+footer {
+  position: relative;
+}
+.footer-bg {
+  background: url(../img/footer-bg.svg) center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .footer_logo_container {
   display: flex;

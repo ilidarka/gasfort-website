@@ -5,6 +5,7 @@
   .main_screen_wrapper {
     flex-direction: column;
     padding-top: 60px;
+    padding-bottom: 0px;
   }
   .main_screen_header {
     h1 {
@@ -37,6 +38,7 @@
     left: auto;
   }
   .slider_controll {
+    justify-content: center;
     right: auto;
     span {
       display: none;
@@ -78,6 +80,42 @@
     bottom: -2%;
   }
 }
+@media screen and (max-width: 980px) {
+  .footer_logo_container {
+    flex-direction: column;
+    img {
+      margin-bottom: 25px;
+      margin-left: -10px;
+    }
+  }
+
+  .footer_menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .footer_socials {
+    a {
+      width: 28px;
+      height: 28px;
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+      }
+    }
+  }
+  .contacts_wrapper {
+    flex-direction: column-reverse;
+  }
+  .contacts_container {
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+}
 @media screen and (max-width: 700px) {
   .main_screen_header {
     h1 {
@@ -113,7 +151,9 @@
       text-align: center;
     }
   }
-
+  .works {
+    margin-bottom: 100px;
+  }
   .works_header {
     h1 {
       font-size: 34px;
@@ -162,7 +202,7 @@
     justify-content: flex-start;
   }
   .btn_gradient {
-    padding: 7px 15px;
+    padding: 15px 15px;
     font-size: 10px;
     line-height: 12px;
     width: 109px;
@@ -202,7 +242,7 @@
       display: block;
       left: 20px;
       bottom: 5%;
-      z-index: 1000;
+      z-index: 4;
       a {
         position: initial;
         display: block;
@@ -216,7 +256,6 @@
         display: block;
       }
       .adaptiv_text_title {
-        font-family: "Jura", sans-serif;
         font-weight: 700;
         font-size: 24px;
         line-height: 28px;
@@ -258,39 +297,5 @@
       font-size: 34px;
       line-height: 49px;
     }
-  }
-  .footer_logo_container {
-    flex-direction: column;
-    img {
-      margin-bottom: 25px;
-      margin-left: -10px;
-    }
-  }
-
-  .footer_menu {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 25px;
-  }
-  .footer_socials {
-    a {
-      width: 28px;
-      height: 28px;
-      img {
-        width: 100%;
-        height: 100%;
-        max-width: none;
-        max-height: none;
-      }
-    }
-  }
-  .contacts_wrapper {
-    flex-direction: column-reverse;
-  }
-  .contacts_container {
-    flex-direction: column;
-    gap: 35px;
-    margin-bottom: 80px;
   }
 }

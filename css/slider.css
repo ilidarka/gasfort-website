@@ -1,6 +1,19 @@
 
 .slider{
   margin-top: 200px;
+  position: relative;
+}
+.slider-bg1{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1000;
+}
+.slider-bg2{
+  position: absolute;
+  bottom: 0;
+  position: absolute;
+  z-index: -1000;
 }
 .slider_container {
   display: flex;
@@ -11,17 +24,17 @@
   height: 1500px;
 }
 .slider_controll {
-  width: fit-content;
-  position: absolute;
+  position: sticky;
+  z-index: 12;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  top: 10px;
   right: 0px;
-  top: 0px;
 }
 .prev, .next {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -105,20 +118,25 @@
 .active_slide {
   z-index: 10;
   bottom: unset;
-  left: 15%;
+  /* left: 15%;
   top: 25%;
-  width: 60%;
+  width: 60%; */
+  left: 10%;
+  top: 5%;
+  width: 80%;
 }
 .prev_slide {
   z-index: 9;
   bottom: unset;
-  top: 0;
-  left: 0;
-  transform: scale(0.5);
+  top: -10%;
+  left: -5%;
+  transform: scale(0.8);
 }
 .next_slide {
   z-index: 11;
-  transform: scale(0.5);
+  transform: scale(0.8);
+  right: -5%;
+  bottom: 10%;
 }
 .dot_indicator {
   display: flex;

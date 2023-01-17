@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+  }
+  .pop-up_wrapper{
+    height: 100%;
+    width: 100%;
+  }
+  .popup {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+    color: #000;
+    visibility: hidden;
+    transition: visibility 0.8s ease 0s;
+  }
+  .popup::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transition: opacity 0.8s ease 0s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+  }
+  .popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 100%;
+    
+  }
+  .popup__body {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: all 0.3s ease 0s;
+  }
+  .popup__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .popup_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .popup_info img{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  .popup__close::after, .popup__close::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #D33F55;
+    transition: all 0.3s ease 0s;
+  }
+  .popup__close::after {
+    bottom: calc(50% - 0.0625rem);
+    transform: rotate(45deg);
+  }
+  .popup__close::before {
+    top: calc(50% - 0.0625rem);
+    transform: rotate(-45deg);
+  }
+
+  .popup.show {
+    visibility: visible;
+    overflow: auto;
+  }
+  .popup.show::before {
+    opacity: 1;
+  }
+  .popup.show .popup__body {
+    transform: scale(1);
+    transition: all 0.3s ease 0.2s;
+  }/*# sourceMappingURL=popup.css.map */
+  .confirm_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+  }
