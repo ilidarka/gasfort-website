@@ -71,9 +71,9 @@
     content: "";
     position: absolute;
     right: 0;
-    width: 100%;
+    width: 150%;
     height: 0.125rem;
-    background-color: #D33F55;
+    background-color: #C779D0;;
     transition: all 0.3s ease 0s;
   }
   .popup__close::after {

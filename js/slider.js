@@ -1,4 +1,4 @@
-//----------JQuery-----------------//
+
 let allSlides = $('.slider_item');
 let dotIndicator = $('.dot_indicator');
 
@@ -41,7 +41,6 @@ $(function() {
     }
   });
 });
-
 function changeSliderControll(slideNumber) {
   if(allSlides.index(slideNumber) == allSlides.length - 1) {
     $('span:contains(Следующий кейс)').css('color', '#fff');

@@ -135,7 +135,7 @@ header {
 
 .header_logo img {
   width: 198px;
-  height: 29px;
+  height: 100%;
 }
 
 .header_socials {
@@ -144,6 +144,11 @@ header {
   align-items: center;
   gap: 14px;
 }
+.header_socials img {
+  width: 57px;
+  height: 57px;
+}
+
 .header_button {
   position: -webkit-sticky;
   position: sticky;
@@ -216,16 +221,17 @@ header {
 
 .works_container_wrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .works_container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
+  gap: 20px;
 }
 
 .works_container_top_item {
@@ -313,37 +319,47 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
+  width: 100%;
 }
 
 .works_container_bottom_item {
   display: flex;
   position: relative;
+  width: 100%;
 }
 
 .bottom_item_container {
   display: flex;
-  gap: 18px;
+  align-items: center;
   border: 1px solid #4bc0c8;
   border-radius: 20px 0 0 20px;
   border-right: none;
+  width: 100%;
+  height: 100%;
+  max-height: 306px;
+  max-height: 336px;
 }
 .bottom_item_container p {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 40px;
+  line-height: 52px;
   text-transform: uppercase;
   color: #ffffff;
-  max-width: 220px;
-  padding-top: 40px;
-  padding-left: 20px;
+  padding-left: 30px;
+  width: 100%;
+  max-width: 305px;
 }
 
 .bottom_item_right_container {
   position: relative;
   border: none;
+  border-radius: 0 20px 20px 0;
+  max-width: 305px;
+  max-height: 336px;
 }
 .bottom_item_right_container img {
+  width: 100%;
+  height: 100%;
   border-radius: 0 20px 20px 0;
 }
 
@@ -358,11 +374,16 @@ header {
 }
 
 .bottom_right_container {
-  border-radius: 20px;
   position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 325px;
+  max-height: 350px;
 }
 .bottom_right_container img {
   border-radius: 20px;
+  width: 100%;
+  height: 100%;
 }
 .bottom_right_container p {
   position: absolute;
@@ -387,6 +408,17 @@ header {
 }
 
 .works_right_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.works_column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.works_right_column {
   flex-direction: column-reverse;
 }
 
@@ -801,12 +833,16 @@ footer {
   margin-bottom: 40px;
 }
 .footer_logo_container img {
-  max-height: 30px;
+  height: 100%;
   max-width: 198px;
 }
 
 .footer_socials {
   margin-bottom: 50px;
+}
+.footer_socials img {
+  max-width: 28px;
+  max-height: 28px;
 }
 
 .footer_menu {
