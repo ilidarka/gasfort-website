@@ -77,6 +77,9 @@
     right: auto;
     bottom: -2%;
   }
+  .team {
+    margin-top: 80px;
+  }
 }
 @media screen and (max-width: 980px) {
   .footer_logo_container {
@@ -266,6 +269,7 @@
     margin-bottom: 40px;
   }
   .team {
+    margin-top: 70px;
     margin-bottom: 100px;
   }
   .team_header h1 {
