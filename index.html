@@ -11,6 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +21,14 @@
     <link rel="stylesheet" href="./css/slider.css" />
     <link rel="stylesheet" href="./css/pop-up.css" />
     <link rel="stylesheet" href="./css/adaptive.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+    <script src="./js/tabs.js" defer></script>
+    <script src="./js/pop-up.js" defer></script>
+    <script src="./js/video-start.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/slider.js" defer></script>
     <title>Document</title>
   </head>
 
@@ -2596,62 +2607,113 @@
         </div>
       </section>
     </div>
-    <section class="slider">
-      <img class="slider-bg1" src="./img/slider-bg-1.svg" alt="" />
-      <img class="slider-bg2" src="./img/slider-bg2.svg" alt="" />
-      <div class="content_wrapper slider_wrapper">
+    <section id="slider" class=" slider_wrapper container">
+      <div class="slider">
         <div class="works_header slider_header">
           <h1>
             НАША СИЛА, в том, что мы помогаем
             <span>не влететь вам на бабки</span>
           </h1>
         </div>
-        <div class="slider_controll">
-          <div class="prev">
-            <img
-              class="rotated_arrow"
-              src="./img/slider_arrow.svg"
-              alt="slider_arrow"
-            /><span>Предыдущий кейс</span>
-          </div>
-          <div class="dot_indicator"></div>
-          <div class="next">
-            <span>Следующий кейс</span
-            ><img src="./img/slider_arrow.svg" alt="slider_arrow" />
-          </div>
-        </div>
-        <div class="slider_container">
-          <div class="slider_item">
-            <h3>Крутое название кейса</h3>
-            <div class="slider_item_container">
-              <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <div class="slider_item_container_hover">
-                <img src="./img/sliderImage1.svg" alt="sliderImage">
-                <img src="./img/sliderImage2.svg" alt="sliderImage">
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h3>Крутое название кейса</h3>
+                  <div class="slider_item_container">
+                    <div class="slider_itemt_content">
+                      <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p class="slider_text">
+                        Рассмотрим примеры ТЗ и основные ошибки, которые приведут к срыву сроков, увеличение сметы, потере качества.
+                        <br>
+                        В этом кейсе мы помогли определится с тематикой и мерчом для транспортной компании, да не простой, а занимающейся перевозкой в сложных климатических услвоиях.
+                      </p>
+                    </div>
+                    <div class="slider_item_container_hover">
+                      <img src="./img/sliderImage1.svg" alt="sliderImage">
+                      <img src="./img/sliderImage2.svg" alt="sliderImage">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h3>Крутое название кейса</h3>
+                  <div class="slider_item_container">
+                    <div class="slider_itemt_content">
+                      <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p class="slider_text">
+                        Рассмотрим примеры ТЗ и основные ошибки, которые приведут к срыву сроков, увеличение сметы, потере качества.
+                        <br>
+                        В этом кейсе мы помогли определится с тематикой и мерчом для транспортной компании, да не простой, а занимающейся перевозкой в сложных климатических услвоиях.
+                      </p>
+                    </div>
+                    <div class="slider_item_container_hover">
+                      <img src="./img/sliderImage1.svg" alt="sliderImage">
+                      <img src="./img/sliderImage2.svg" alt="sliderImage">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h3>Крутое название кейса</h3>
+                  <div class="slider_item_container">
+                    <div class="slider_itemt_content">
+                      <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p class="slider_text">
+                        Рассмотрим примеры ТЗ и основные ошибки, которые приведут к срыву сроков, увеличение сметы, потере качества.
+                        <br>
+                        В этом кейсе мы помогли определится с тематикой и мерчом для транспортной компании, да не простой, а занимающейся перевозкой в сложных климатических услвоиях.
+                      </p>
+                    </div>
+                    <div class="slider_item_container_hover">
+                      <img src="./img/sliderImage1.svg" alt="sliderImage">
+                      <img src="./img/sliderImage2.svg" alt="sliderImage">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h3>Крутое название кейса</h3>
+                  <div class="slider_item_container">
+                    <div class="slider_itemt_content">
+                      <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p class="slider_text">
+                        Рассмотрим примеры ТЗ и основные ошибки, которые приведут к срыву сроков, увеличение сметы, потере качества.
+                        <br>
+                        В этом кейсе мы помогли определится с тематикой и мерчом для транспортной компании, да не простой, а занимающейся перевозкой в сложных климатических услвоиях.
+                      </p>
+                    </div>
+                    <div class="slider_item_container_hover">
+                      <img src="./img/sliderImage1.svg" alt="sliderImage">
+                      <img src="./img/sliderImage2.svg" alt="sliderImage">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h3>Крутое название кейса</h3>
+                  <div class="slider_item_container">
+                    <div class="slider_itemt_content">
+                      <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p class="slider_text">
+                        Рассмотрим примеры ТЗ и основные ошибки, которые приведут к срыву сроков, увеличение сметы, потере качества.
+                        <br>
+                        В этом кейсе мы помогли определится с тематикой и мерчом для транспортной компании, да не простой, а занимающейся перевозкой в сложных климатических услвоиях.
+                      </p>
+                    </div>
+                    <div class="slider_item_container_hover">
+                      <img src="./img/sliderImage1.svg" alt="sliderImage">
+                      <img src="./img/sliderImage2.svg" alt="sliderImage">
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="slider_item">
-            <h3>Крутое название кейса</h3>
-            <div class="slider_item_container">
-              <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <div class="slider_item_container_hover">
-                <img src="./img/sliderImage1.svg" alt="sliderImage">
-                <img src="./img/sliderImage2.svg" alt="sliderImage">
+
+              <div class="swiper-controll">
+                  <!-- buttons -->
+                  <div class="swiper-buttons">
+                      <div class="swiper-button-prev"><img src="./img/slider_arrow.svg" alt=""></div>
+                      <div class="swiper-button-next"><img src="./img/slider_arrow_last.svg" alt=""></div>
+                  </div>
+
               </div>
-            </div>
+
           </div>
-          <div class="slider_item">
-            <h3>Крутое название кейса</h3>
-            <div class="slider_item_container">
-              <iframe src="https://www.youtube.com/embed/nOdDtnHWaDo" title="Ambient Light Effects | CSS 3D Glowing Cube Animation Effects" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <div class="slider_item_container_hover">
-                <img src="./img/sliderImage1.svg" alt="sliderImage">
-                <img src="./img/sliderImage2.svg" alt="sliderImage">
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <section class="team">
@@ -2832,10 +2894,5 @@
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="./js/tabs.js"></script>
-    <script src="./js/pop-up.js"></script>
-    <script src="./js/video-start.js"></script>
-    <script src="./js/slider.js"></script>
   </body>
 </html>

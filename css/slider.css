@@ -1,93 +1,126 @@
-
-.slider{
+.slider_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.slider_wrapper{
   margin-top: 200px;
-  position: relative;
 }
-.slider-bg1{
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1000;
+.slider {
+    margin: 0 auto;
+    max-width: 1360px;
+    position: relative;
+    overflow-x: hidden; 
+  }
+.swiper-container {
+    padding: 0 15px;
+    padding-bottom: 20px;
 }
-.slider-bg2{
-  position: absolute;
-  bottom: 0;
-  position: absolute;
-  z-index: -1000;
+.swiper-container-horizontal > .swiper-scrollbar {
+    border-radius: 2px;
+    height: 5px;
+    width: 200px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.slider_container {
-  width: 100%;
-  display: flex;
-  gap: 20px;
-  overflow: hidden;
+  .swiper-wrapper img {
+    width: 100%;
+} 
+.swiper-button-prev, .swiper-button-next, .swiper-scrollbar-horizontal {
+    position: unset !important;
 }
-.slider_controll {
-  position: sticky;
-  z-index: 12;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  top: 10px;
-  right: 0px;
+.swiper-controll {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 90px;
 }
-.prev, .next {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 36px;
-  text-transform: uppercase;
-  color: #FEAC5E;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.swiper-buttons {
+    display: flex;
+    gap: 70px;
 }
-.slider_item {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  transition: all 500ms ease;
+.swiper-button-next::after, .swiper-button-prev::after {
+    content: unset !important;
 }
-.slider_item h3 {
-  font-family: 'Dela Gothic One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 38px;
-  text-transform: uppercase;
-  background: linear-gradient(93.52deg, #FEAC5E 0.09%, #C97BCC 52.53%, #C779D0 52.54%, #4BC0C8 103.43%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+.swiper-slide {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
 }
-.rotated_arrow {
-  transform: rotate(180deg);
+.swiper-slide:hover .slider_item_container_hover {
+    display: flex;
+    transition: 1s all;
 }
-.dot_indicator {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.swiper-slide:nth-child(even) {
+    margin-top: 100px;
+}
+.swiper-slide:hover {
+    margin-top: 0;
+    width: 60vw !important;
+    transition: 1s all;
+}
+.swiper-slide:hover iframe {
+    width: 70%;
+}
+.swiper-slide:hover .slider_text {
+    display: block;
+}
+.swiper-slide h3 {
+    font-family: 'Dela Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 38px;
+    text-transform: uppercase;
+    background: linear-gradient(93.52deg, #FEAC5E 0.09%, #C97BCC 52.53%, #C779D0 52.54%, #4BC0C8 103.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 .slider_item_container {
-  background: #FEF4FF;
-  border-radius: 16px;
-  width: fit-content;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FEF4FF;
+    border-radius: 16px;
+    padding: 20px;
+    gap: 20px;
 }
 .slider_item_container iframe {
-  width: 50%;
-}
-.slider_item_container img {
-  width: 50%;
+    width: 100%;
+    height: 30rem;
 }
 .slider_item_container_hover {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.slider_item_container_hover img {
+    width: 45%;
+}
+.slider_itemt_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.slider_text {
+    display: none;
+    width: 50%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #525252;
 }
