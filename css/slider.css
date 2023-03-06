@@ -46,7 +46,7 @@
     content: unset !important;
 }
 .swiper-slide {
-    width: 40%;
+    width: 40% !important;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -123,4 +123,9 @@
     font-size: 18px;
     line-height: 28px;
     color: #525252;
+}
+.clickedSlide {
+    margin-top: 0;
+    width: 96.5vw !important;
+    transition: 1s all;
 }

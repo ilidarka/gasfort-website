@@ -9,14 +9,21 @@ slidesList.forEach((elem) => {
 const openSlide = (event, elem) => {
     if(slidesCount === 2.5) {
         slidesCount = 1;
-        console.log(slidesCount);
-    } else {
+        slidesList.forEach((elem) => {
+          elem.classList.add("clickedSlide");
+        });
+        renderSlider();
+      } else {
         slidesCount = 2.5;
-        console.log(slidesCount);
+        slidesList.forEach((elem) => {
+          elem.classList.remove("clickedSlide");
+        });
+        renderSlider();
     }
 };
 
-$swiperSelector.each(function(index) {
+function renderSlider() {
+  $swiperSelector.each(function(index) {
     var $this = $(this);
     $this.addClass('swiper-slider-' + index);
     
@@ -49,3 +56,4 @@ $swiperSelector.each(function(index) {
       },
    });
 });
+}
