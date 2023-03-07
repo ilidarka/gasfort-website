@@ -25,7 +25,10 @@
     left: 50%;
     transform: translateX(-50%);
 }
-  .swiper-wrapper img {
+.swiper-wrapper {
+  width: 83rem !important;
+}
+.swiper-wrapper img {
     width: 100%;
 } 
 .swiper-button-prev, .swiper-button-next, .swiper-scrollbar-horizontal {
@@ -126,6 +129,6 @@
 }
 .clickedSlide {
     margin-top: 0;
-    width: 96.5vw !important;
+    width: 95rem !important;
     transition: 1s all;
 }
