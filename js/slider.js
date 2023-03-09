@@ -2,6 +2,12 @@ var $swiperSelector = $('.swiper-container');
 let slidesList = document.querySelectorAll(".swiper-slide");
 let slidesCount = 2.5;
 
+let css = '.swiper-slide:hover {width: 93vw !important;}';
+
+window.onload = function() {
+    renderSlider();
+}
+
 slidesList.forEach((elem) => {
     elem.addEventListener("click", (event) => openSlide(event, elem));
 });
@@ -11,6 +17,7 @@ const openSlide = (event, elem) => {
         slidesCount = 1;
         slidesList.forEach((elem) => {
           elem.classList.add("clickedSlide");
+          elem.style.setProperty("--slider-width", "92rem !important");
         });
         renderSlider();
       } else {
@@ -36,7 +43,7 @@ function renderSlider() {
 
     var swiper = new Swiper('.swiper-slider-' + index, {
       direction: 'horizontal',
-      loop: loop,
+      loop: true,
       freeMode: freeMode,
       spaceBetween: spaceBetween,
       breakpoints: {

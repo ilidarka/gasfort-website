@@ -66,6 +66,7 @@
     margin-top: 0;
     width: 60vw !important;
     transition: 1s all;
+    width: var(--slider-width);
 }
 .swiper-slide:hover iframe {
     width: 70%;
