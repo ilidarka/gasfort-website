@@ -55,24 +55,8 @@
     align-items: flex-start;
     cursor: pointer;
 }
-.swiper-slide:hover .slider_item_container_hover {
-    display: flex;
-    transition: 1s all;
-}
 .swiper-slide:nth-child(even) {
     margin-top: 100px;
-}
-.swiper-slide:hover {
-    margin-top: 0;
-    width: 60vw !important;
-    transition: 1s all;
-    width: var(--slider-width);
-}
-.swiper-slide:hover iframe {
-    width: 70%;
-}
-.swiper-slide:hover .slider_text {
-    display: block;
 }
 .swiper-slide h3 {
     font-family: 'Dela Gothic One';
@@ -100,6 +84,7 @@
 .slider_item_container iframe {
     width: 100%;
     height: 30rem;
+    border-radius: 16px;
 }
 .slider_item_container_hover {
     width: 100%;
@@ -131,5 +116,21 @@
 .clickedSlide {
     margin-top: 0;
     width: 95rem !important;
+    transition: 1s all;
+}
+.swiper-slide:hover {
+    margin-top: 0;
+    transition: 1s all;
+    width: 38rem !important;
+}
+.swiper-slide:hover iframe {
+    width: 100%;
+}
+.swiper-slide:hover .slider_item_container_hover {
+    display: flex;
+    transition: 1s all;
+}
+.scaled-slide {
+    transform: scale(0.9);
     transition: 1s all;
 }
