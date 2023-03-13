@@ -1,8 +1,10 @@
 var $swiperSelector = $('.swiper-container');
 let slidesList = document.querySelectorAll(".swiper-slide");
+let slidesContent = document.querySelectorAll(".slider_item_container_hover");
+let slidesTextContainer = document.querySelectorAll(".sliderTextContainer");
+let slidesText = document.querySelectorAll(".sliderText");
+let videoFrame = document.querySelectorAll(".videoFrame");
 let slidesCount = 2.5;
-
-let css = '.swiper-slide:hover {width: 93vw !important;}';
 
 window.onload = function() {
     renderSlider();
@@ -25,12 +27,38 @@ const openSlide = (event, elem) => {
         slidesCount = 1;
         slidesList.forEach((elem) => {
             elem.classList.add("clickedSlide");
+            elem.classList.toggle("swiper-slide-white");
+        });
+        slidesContent.forEach((elem) => {
+            elem.classList.add("slider_item_container_active");
+        });
+        slidesTextContainer.forEach((elem) => {
+            elem.classList.add("clickedSlideTextContainer");
+        });
+        slidesText.forEach((elem) => {
+            elem.classList.add("clickedSlideText");
+        });
+        videoFrame.forEach((elem) => {
+            elem.classList.add("videoFrameSmall");
         });
         renderSlider();
     } else {
         slidesCount = 2.5;
         slidesList.forEach((elem) => {
             elem.classList.remove("clickedSlide");
+            elem.classList.toggle("swiper-slide-white");
+        });
+        slidesContent.forEach((elem) => {
+            elem.classList.remove("slider_item_container_active");
+        });
+        slidesTextContainer.forEach((elem) => {
+            elem.classList.remove("clickedSlideTextContainer");
+        });
+        slidesText.forEach((elem) => {
+            elem.classList.remove("clickedSlideText");
+        });
+        videoFrame.forEach((elem) => {
+            elem.classList.remove("videoFrameSmall");
         });
         renderSlider();
     }
@@ -40,9 +68,7 @@ const hoverSlide = (event, elem) => {
     slidesList.forEach((elem) => {
         if(event.currentTarget != elem) {
             elem.classList.add("scaled-slide");
-        } else if (event.currentTarget === elem && slidesCount == 1) {
-            console.log("95rem");
-        }
+        } 
     });
 };
 
