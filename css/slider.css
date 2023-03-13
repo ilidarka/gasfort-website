@@ -134,7 +134,7 @@
 }
 .clickedSlide {
     margin-top: 0;
-    width: 95rem !important;
+    width: 80rem !important;
     transition: 1s all;
 }
 .slider_item_container_active {
