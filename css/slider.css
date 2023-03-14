@@ -133,3 +133,6 @@
     margin: 0 40px 0 20px !important;
     transition: 1s all;
 }
+.clicked-slide-images {
+    display: none !important;
+}

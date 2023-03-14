@@ -1,5 +1,5 @@
-var $swiperSelector = $('.swiper-container');
 let slidesList = document.querySelectorAll(".swiper-slide");
+let slidesImagesList = document.querySelectorAll(".slider_item_container_images");
 let slidesCount = 2.5;
 let space = 20;
 
@@ -14,6 +14,11 @@ slidesList.forEach((elem) => {
 });
 
 const openSlide = () => {
+    slidesList.forEach((elem) => {
+        elem.classList.remove("scaled-slide-min");
+        elem.classList.remove("scaled-slide-max");
+        console.log(elem.children[1].children[1]);
+    });
     if(slidesCount === 2.5) {
         slidesCount = 1;
         renderSlider();
