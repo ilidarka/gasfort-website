@@ -57,9 +57,9 @@ const mouseOver = (event, elem) => {
     if(slidesCount !== 1) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
-                slide.classList.add("scaled-slide-min");
+                slide.classList.toggle("scaled-slide-min");
             } else {
-                slide.classList.add("scaled-slide-max");
+                slide.classList.toggle("scaled-slide-max");
             }
         });
     }
@@ -69,9 +69,9 @@ const mouseOut = (event, elem) => {
     if(slidesCount !== 1) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
-                slide.classList.remove("scaled-slide-min");
+                slide.classList.toggle("scaled-slide-min");
             } else {
-                slide.classList.remove("scaled-slide-max");
+                slide.classList.toggle("scaled-slide-max");
             }
         });
     }
