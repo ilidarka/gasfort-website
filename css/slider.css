@@ -136,3 +136,22 @@
 .clicked-slide-images {
     display: none !important;
 }
+.clicked-slide {
+    padding: 20px;
+    align-items: flex-start;
+    background: #FEF4FF;
+    border-radius: 16px;
+}
+.clicked-slider-item-container {
+    padding: 20px 0;
+}
+.clicked-sliderText {
+    display: block;
+    width: 50%;
+}
+.clicked-content {
+    gap: 20px;
+}
+.clicked-videoFrame {
+    width: 50%;
+}
