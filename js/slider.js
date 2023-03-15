@@ -17,6 +17,10 @@ if(window.screen.width >= 1100) {
         elem.addEventListener("mouseover", (event) => mouseOver(event, elem));
         elem.addEventListener("mouseout", (event) => mouseOut(event, elem));
     });
+    $(".slides-indicator").each(function(index) {
+        $(".slides-indicator").append('<img class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
+        $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
+    });
 } else {
     slidesCount = 1;
     renderSlider();
@@ -41,10 +45,6 @@ const openSlide = (event) => {
         });
         smallSlidersList.css("display", "flex");
         $(".slides-indicator").css("display", "flex");
-        $(".slides-indicator").each(function(index) {
-            $(".slides-indicator").append('<img class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
-            $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
-        });
         renderSlider();
     } else {
         slidesCount = 2.5;
