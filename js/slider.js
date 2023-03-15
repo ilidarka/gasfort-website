@@ -2,6 +2,7 @@ let slidesList = document.querySelectorAll(".swiper-slide");
 let slidesImagesList = document.querySelectorAll(".slider_item_container_images");
 let smallSlidersList = $(".small-slider-wrapper");
 let slidesIndicator = $(".slides-indicator");
+let allSlides = $(".swiper-slide");
 
 let slidesCount = 2.5;
 let touchMove = true;
@@ -22,7 +23,6 @@ if(window.screen.width >= 1100) {
     renderSlider();
 }
 
-
 const openSlide = (event) => {
     slidesList.forEach((elem) => {
         elem.classList.remove("scaled-slide-min");
@@ -41,7 +41,8 @@ const openSlide = (event) => {
         smallSlidersList.css("display", "flex");
         $(".slides-indicator").css("display", "flex");
         $(".slides-indicator").each(function(index) {
-            $(".slides-indicator").append('<img src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
+            $(".slides-indicator").append('<img class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
+            console.log($(".swiper-slide :eq(" + index + ")"));
         });
         touchMove = false;
         renderSlider();
