@@ -9,12 +9,18 @@ window.onload = function() {
     renderSlider();
 }
 
-slidesList.forEach((elem) => {
-    elem.children[0].addEventListener("click", (event) => openSlide());
-    elem.children[1].addEventListener("click", (event) => openSlide());
-    elem.addEventListener("mouseover", (event) => mouseOver(event, elem));
-    elem.addEventListener("mouseout", (event) => mouseOut(event, elem));
-});
+if(window.screen.width >= 1100) {
+    slidesList.forEach((elem) => {
+        elem.children[0].addEventListener("click", (event) => openSlide());
+        elem.children[1].addEventListener("click", (event) => openSlide());
+        elem.addEventListener("mouseover", (event) => mouseOver(event, elem));
+        elem.addEventListener("mouseout", (event) => mouseOut(event, elem));
+    });
+} else {
+    slidesCount = 1;
+    renderSlider();
+}
+
 
 const openSlide = () => {
     slidesList.forEach((elem) => {
@@ -57,9 +63,9 @@ const mouseOver = (event, elem) => {
     if(slidesCount !== 1) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
-                slide.classList.toggle("scaled-slide-min");
+                slide.classList.add("scaled-slide-min");
             } else {
-                slide.classList.toggle("scaled-slide-max");
+                slide.classList.add("scaled-slide-max");
             }
         });
     }
@@ -69,9 +75,9 @@ const mouseOut = (event, elem) => {
     if(slidesCount !== 1) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
-                slide.classList.toggle("scaled-slide-min");
+                slide.classList.remove("scaled-slide-min");
             } else {
-                slide.classList.toggle("scaled-slide-max");
+                slide.classList.remove("scaled-slide-max");
             }
         });
     }
