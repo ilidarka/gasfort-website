@@ -1,11 +1,10 @@
 let slidesList = document.querySelectorAll(".swiper-slide");
 let slidesImagesList = document.querySelectorAll(".slider_item_container_images");
+let videosList = document.querySelectorAll(".videoFrame");
 let smallSlidersList = $(".small-slider-wrapper");
 let slidesIndicator = $(".slides-indicator");
-let allSlides = $(".swiper-slide");
 
 let slidesCount = 2.5;
-let touchMove = true;
 
 window.onload = function() {
     renderSlider();
@@ -24,6 +23,7 @@ if(window.screen.width >= 1100) {
 }
 
 const openSlide = (event) => {
+    console.log("clicked");
     slidesList.forEach((elem) => {
         elem.classList.remove("scaled-slide-min");
         elem.classList.remove("scaled-slide-max");
@@ -36,15 +36,15 @@ const openSlide = (event) => {
             elem.children[1].classList.add("clicked-slider-item-container");
             elem.children[1].children[0].classList.add("clicked-content");
             elem.children[1].children[0].children[0].classList.add("clicked-videoFrame");
-            elem.children[1].children[0].children[1].classList.add("clicked-sliderText");
+            elem.children[1].children[0].children[1].style.display = "none";
+            elem.children[1].children[0].children[2].classList.add("clicked-sliderText");
         });
         smallSlidersList.css("display", "flex");
         $(".slides-indicator").css("display", "flex");
         $(".slides-indicator").each(function(index) {
             $(".slides-indicator").append('<img class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
-            console.log($(".swiper-slide :eq(" + index + ")"));
+            $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
         });
-        touchMove = false;
         renderSlider();
     } else {
         slidesCount = 2.5;
@@ -53,11 +53,11 @@ const openSlide = (event) => {
             elem.children[1].classList.remove("clicked-slider-item-container");
             elem.children[1].children[0].classList.remove("clicked-content");
             elem.children[1].children[0].children[0].classList.remove("clicked-videoFrame");
-            elem.children[1].children[0].children[1].classList.remove("clicked-sliderText");
+            elem.children[1].children[0].children[1].style.display = "block";
+            elem.children[1].children[0].children[2].classList.remove("clicked-sliderText");
         });
         smallSlidersList.css("display", "none");
         $(".slides-indicator").css("display", "none");
-        touchMove = true;
         renderSlider();
     }
 };
