@@ -22,6 +22,9 @@
   .consult_item {
     width: 100%;
   }
+  .consult_item p {
+    margin-bottom: 40px;
+  }
   .consult_item input {
     width: 100%;
   }
@@ -77,17 +80,31 @@
     right: auto;
     bottom: -2%;
   }
-  .team {
-    margin-top: 80px;
-  }
 }
 @media screen and (max-width: 980px) {
+  .column-container .column .top-column {
+    flex-wrap: wrap;
+  }
+  .column-container .column .bottom-column {
+    flex-wrap: wrap;
+  }
   .footer_logo_container {
     flex-direction: column;
   }
   .footer_logo_container img {
     margin-bottom: 25px;
     margin-left: -10px;
+  }
+  .works .works-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .works .works-wrapper .facts-container {
+    display: none;
+  }
+  .works .works-wrapper .facts-container-adaptiv {
+    display: flex;
   }
   .footer_menu {
     flex-direction: column;
@@ -153,7 +170,7 @@
     max-height: none;
   }
   .works_header h1 {
-    font-size: 25px;
+    font-size: 34px;
     line-height: 56px;
   }
   .works_right_container {
@@ -220,15 +237,25 @@
   .column_container {
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
   }
   .tab_button {
     top: -100px;
+  }
+  .column_item {
+    margin-bottom: 0px;
   }
   .column_item a {
     display: none;
   }
   .column_item p {
     display: none;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   .column_item_img_container {
     justify-content: flex-start;
@@ -263,13 +290,11 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    text-decoration-line: underline;
     color: #ffffff;
     margin-bottom: 40px;
   }
   .team {
-    margin-top: 70px;
     margin-bottom: 100px;
   }
   .team_header h1 {
@@ -295,8 +320,5 @@
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
-  }
-  .slider-buttons img {
-    width: 90%;
   }
 }/*# sourceMappingURL=adaptive.css.map */

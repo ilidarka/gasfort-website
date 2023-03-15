@@ -54,10 +54,3 @@
     -o-user-drag: none;
     user-select: none;
 }
-.slides-indicator {
-    width: 100%;
-    display: none;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
