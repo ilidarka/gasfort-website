@@ -125,19 +125,8 @@
     background-color: unset;
     transition: background-color 1s ease;
 }
-.swiper-slide:hover {
-    animation: slideAnim 2s forwards;
-}
-@keyframes slideAnim {
-    0% {
-        height: 476px;
-    }
-    100% {
-        height: 585.41px;
-    }
-}
 .swiper-slide:hover .slider_item_container_images {
-    animation: ani 2s forwards;
+    animation: ani 1s forwards;
     background-color: #FEF4FF;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
