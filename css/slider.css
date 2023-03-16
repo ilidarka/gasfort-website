@@ -123,7 +123,7 @@
     padding: 20px;
     height: fit-content;
     background-color: unset;
-    transition: background-color 1s ease;
+    transition: background-color 1s linear;
 }
 .swiper-slide:hover .slider_item_container_images {
     animation: ani 1s forwards;
