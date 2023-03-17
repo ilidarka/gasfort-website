@@ -5,6 +5,7 @@ let smallSlidersList = $(".small-slider-wrapper");
 let slidesIndicator = $(".slides-indicator");
 
 let slidesCount = 2.5;
+let spaceBetweenSlides = 20;
 
 window.onload = function() {
     renderSlider();
@@ -27,7 +28,6 @@ if(window.screen.width >= 1100) {
 }
 
 const openSlide = (event) => {
-    console.log("clicked");
     slidesList.forEach((elem) => {
         elem.classList.remove("scaled-slide-min");
         elem.classList.remove("scaled-slide-max");
@@ -35,6 +35,7 @@ const openSlide = (event) => {
     });
     if(slidesCount === 2.5) {
         slidesCount = 1;
+        spaceBetweenSlides = 200;
         slidesList.forEach((elem) => {
             elem.classList.add("clicked-slide");
             elem.children[1].classList.add("clicked-slider-item-container");
@@ -45,9 +46,11 @@ const openSlide = (event) => {
         });
         smallSlidersList.css("display", "flex");
         $(".slides-indicator").css("display", "flex");
+        $(".swiper-container").css("height", "unset");
         renderSlider();
     } else {
         slidesCount = 2.5;
+        spaceBetweenSlides = 20;
         slidesList.forEach((elem) => {
             elem.classList.remove("clicked-slide");
             elem.children[1].classList.remove("clicked-slider-item-container");
@@ -58,6 +61,7 @@ const openSlide = (event) => {
         });
         smallSlidersList.css("display", "none");
         $(".slides-indicator").css("display", "none");
+        $(".swiper-container").css("height", "788px !important");
         renderSlider();
     }
 };
@@ -88,7 +92,7 @@ const mouseOut = (event, elem) => {
 
 function renderSlider() {
     var mySwiper = new Swiper(".swiper-container", {
-        spaceBetween: 20,
+        spaceBetween: spaceBetweenSlides,
         initialSlide: 1,
         slidesPerView: slidesCount,
         centeredSlides: true,
