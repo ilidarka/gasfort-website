@@ -158,6 +158,19 @@
     line-height: 12px;
     text-align: center;
   }
+  .slider-section-header h3 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 49px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .slider-section-header h3 span {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 49px;
+    text-transform: uppercase;
+  }
   .works {
     margin-bottom: 100px;
   }
