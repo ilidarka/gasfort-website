@@ -229,7 +229,6 @@
     width: 50%;
 }
 .slides-indicator {
-    margin-top: 20px;
     width: 100%;
     display: none;
     justify-content: flex-start;
