@@ -11,6 +11,9 @@ window.onload = function() {
     renderSlider();
 }
 
+document.addEventListener("click", (event) => {
+});
+
 if(window.screen.width >= 1100) {
     slidesList.forEach((elem) => {
         elem.children[0].addEventListener("click", (event) => openSlide(event));
@@ -22,18 +25,21 @@ if(window.screen.width >= 1100) {
         $(".slides-indicator").append('<img class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
         $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
     });
+    $(".slideCloseButton").bind("click", () => {
+        closeSlide();
+    });
 } else {
     slidesCount = 1;
     renderSlider();
 }
 
 const openSlide = (event) => {
-    slidesList.forEach((elem) => {
-        elem.classList.remove("scaled-slide-min");
-        elem.classList.remove("scaled-slide-max");
-        elem.children[1].children[1].classList.toggle("clicked-slide-images");
-    });
     if(slidesCount === 2.5) {
+        slidesList.forEach((elem) => {
+            elem.classList.remove("scaled-slide-min");
+            elem.classList.remove("scaled-slide-max");
+            elem.children[1].children[1].classList.toggle("clicked-slide-images");
+        });
         slidesCount = 1;
         spaceBetweenSlides = 200;
         slidesList.forEach((elem) => {
@@ -47,8 +53,13 @@ const openSlide = (event) => {
         smallSlidersList.css("display", "flex");
         $(".slides-indicator").css("display", "flex");
         $(".swiper-container").css("height", "unset");
+        $(".slideCloseButton").css("display", "block");
+        $(".slider_item_container_images").css("display", "none");
         renderSlider();
-    } else {
+    };
+};
+const closeSlide = () => {
+    if(slidesCount === 1) {
         slidesCount = 2.5;
         spaceBetweenSlides = 20;
         slidesList.forEach((elem) => {
@@ -62,12 +73,14 @@ const openSlide = (event) => {
         smallSlidersList.css("display", "none");
         $(".slides-indicator").css("display", "none");
         $(".swiper-container").css("height", "788px !important");
+        $(".slideCloseButton").css("display", "none");
+        $(".slider_item_container_images").css("display", "flex");
         renderSlider();
     }
 };
 
 const mouseOver = (event, elem) => {
-    if(slidesCount !== 1) {
+    if(slidesCount === 2.5) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
                 slide.classList.add("scaled-slide-min");
@@ -79,7 +92,7 @@ const mouseOver = (event, elem) => {
 };
 
 const mouseOut = (event, elem) => {
-    if(slidesCount !== 1) {
+    if(slidesCount === 2.5) {
         slidesList.forEach((slide) => {
             if(slide != elem) {
                 slide.classList.remove("scaled-slide-min");
