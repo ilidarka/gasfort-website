@@ -6,7 +6,6 @@ let slidesIndicator = $(".slides-indicator");
 
 let slidesCount = 2.5;
 let spaceBetweenSlides = 20;
-let currentSlide = 1;
 
 let mySwiper;
 
@@ -37,12 +36,6 @@ if(window.screen.width >= 1100) {
         $(".slides-indicator").append('<img data-dotNumber="'+dotNumber+'" class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
         $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
     });
-    let dots = document.querySelectorAll(".dots");
-    dots.forEach((elem) => {
-        elem.addEventListener("click", (event) => {
-            setActiveSlide(event.target.dataset.dotnumber);
-        });
-    });
     $(".slideCloseButton").bind("click", () => {
         closeSlide();
     });
@@ -59,8 +52,8 @@ const openSlide = (event) => {
             elem.children[1].children[1].classList.toggle("clicked-slide-images");
         });
         slidesCount = 1;
+        mySwiper.initialSlide = 3;
         spaceBetweenSlides = 200;
-        currentSlide = event.target.closest(".swiper-slide").ariaLabel.split(" /")[0] - 1;
         slidesList.forEach((elem) => {
             elem.classList.add("clicked-slide");
             elem.children[1].classList.add("clicked-slider-item-container");
@@ -76,6 +69,7 @@ const openSlide = (event) => {
         $(".slider_item_container_images").css("display", "none");
         $(".slider-buttons").css("margin-top", "0");
         renderSlider();
+        console.log(mySwiper);
     };
 };
 const closeSlide = () => {
@@ -125,9 +119,8 @@ const mouseOut = (event, elem) => {
 };
 
 function renderSlider() {
-        mySwiper = new Swiper(".swiper-container", {
+    mySwiper = new Swiper(".swiper-container", {
         spaceBetween: spaceBetweenSlides,
-        initialSlide: currentSlide,
         slidesPerView: slidesCount,
         centeredSlides: true,
         roundLengths: true,
@@ -139,10 +132,7 @@ function renderSlider() {
             prevEl: ".swiper-button-prev",
         }
     });
-}
-
-function setActiveSlide(slideNumber) {
-    currentSlide = slideNumber;
-    console.log(mySwiper.navigation.nextEl);
-    renderSlider();
+    mySwiper.on("slideChange", (event) => {
+        console.log(event);
+    });
 }
