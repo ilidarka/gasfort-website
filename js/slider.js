@@ -143,18 +143,6 @@ function renderSlider() {
 
 function setActiveSlide(slideNumber) {
     currentSlide = slideNumber;
-    if(currentSlide == 1) {
-        mySwiper.isBeginning = true;
-    } else if(currentSlide == slidesList.length - 1) {
-        mySwiper.isEnd = true;
-    } else {
-        mySwiper.isBeginning = false;
-        mySwiper.isEnd = false;
-    }
-
+    console.log(mySwiper.navigation.nextEl);
     renderSlider();
 }
-
-mySwiper.on("navigationNext", () => {
-    console.log("zxc");
-});
