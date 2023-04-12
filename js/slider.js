@@ -60,6 +60,7 @@ const openSlide = (event) => {
         });
         slidesCount = 1;
         spaceBetweenSlides = 200;
+        currentSlide = event.target.closest(".swiper-slide").ariaLabel.split(" /")[0] - 1;
         slidesList.forEach((elem) => {
             elem.classList.add("clicked-slide");
             elem.children[1].classList.add("clicked-slider-item-container");
@@ -135,17 +136,25 @@ function renderSlider() {
         allowTouchMove: false,
         navigation: {
             nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
+            prevEl: ".swiper-button-prev",
         }
     });
 }
 
 function setActiveSlide(slideNumber) {
-    console.log(slideNumber);
     currentSlide = slideNumber;
     if(currentSlide == 1) {
-        mySwiper.isBegining = true;
+        mySwiper.isBeginning = true;
+    } else if(currentSlide == slidesList.length - 1) {
+        mySwiper.isEnd = true;
+    } else {
+        mySwiper.isBeginning = false;
+        mySwiper.isEnd = false;
     }
+
     renderSlider();
-    console.log(mySwiper);
 }
+
+mySwiper.on("navigationNext", () => {
+    console.log("zxc");
+});
