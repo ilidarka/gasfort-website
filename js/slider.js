@@ -3,15 +3,26 @@ let slidesImagesList = document.querySelectorAll(".slider_item_container_images"
 let videosList = document.querySelectorAll(".videoFrame");
 let smallSlidersList = $(".small-slider-wrapper");
 let slidesIndicator = $(".slides-indicator");
+let sliderPrevButton = $(".swiper-button-prev");
+let sliderNextButton = $(".swiper-button-next");
 
 let slidesCount = 2.5;
 let spaceBetweenSlides = 20;
+let selectedSlideNumber = 1;
 
 let mySwiper;
 
 window.onload = function() {
     renderSlider();
 }
+
+sliderPrevButton.bind("click", (event) => {
+    mySwiper.slidePrev(1000);
+});
+
+sliderNextButton.bind("click", () => {
+    mySwiper.slideNext(1000);
+});
 
 document.addEventListener("click", (event) => {
     if(event.target.closest(".swiper-slide") 
@@ -36,6 +47,10 @@ if(window.screen.width >= 1100) {
         $(".slides-indicator").append('<img data-dotNumber="'+dotNumber+'" class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
         $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
     });
+    $(".dots").bind("click", (event) => {
+        selectedSlideNumber = event.target.dataset.dotnumber;
+        renderSlider();
+    });
     $(".slideCloseButton").bind("click", () => {
         closeSlide();
     });
@@ -52,7 +67,7 @@ const openSlide = (event) => {
             elem.children[1].children[1].classList.toggle("clicked-slide-images");
         });
         slidesCount = 1;
-        mySwiper.initialSlide = 3;
+        selectedSlideNumber = parseInt(event.target.closest(".swiper-slide").ariaLabel.split(" / ")[0]) - 1;
         spaceBetweenSlides = 200;
         slidesList.forEach((elem) => {
             elem.classList.add("clicked-slide");
@@ -69,7 +84,6 @@ const openSlide = (event) => {
         $(".slider_item_container_images").css("display", "none");
         $(".slider-buttons").css("margin-top", "0");
         renderSlider();
-        console.log(mySwiper);
     };
 };
 const closeSlide = () => {
@@ -91,6 +105,7 @@ const closeSlide = () => {
         $(".slider_item_container_images").css("display", "flex");
         $(".slider-buttons").css("margin-top", "150px");
         renderSlider();
+        mySwiper.slideReset(1000)
     }
 };
 
@@ -122,17 +137,25 @@ function renderSlider() {
     mySwiper = new Swiper(".swiper-container", {
         spaceBetween: spaceBetweenSlides,
         slidesPerView: slidesCount,
+        initialSlide: selectedSlideNumber,
         centeredSlides: true,
         roundLengths: true,
         loop: false,
         loopAdditionalSlides: 30,
         allowTouchMove: false,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
     });
     mySwiper.on("slideChange", (event) => {
-        console.log(event);
+        if(mySwiper.activeIndex == 0) {
+            sliderPrevButton.css("opacity", "0.5");
+        } else if(mySwiper.activeIndex >= mySwiper.slides.length - 1) {
+            sliderNextButton.css("opacity", "0.5");
+        } else {
+            sliderNextButton.css("opacity", "1");
+            sliderPrevButton.css("opacity", "1");
+        }
     });
-}
+};
+
+function setActiveSlide(slideNumber) {
+    mySwiper.initialSlide = slideNumber;
+};
