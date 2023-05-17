@@ -1,8 +1,10 @@
 const sliders = [...document.querySelectorAll(".slider__container")];
+let allSlides = document.querySelectorAll(".slider__item");
 
 sliders.forEach((slider, i) => {
   let isDragStart = false,
       isDragging = false,
+      isClicking = false,
       isSlide = false,
       prevPageX,
       prevScrollLeft,
@@ -24,6 +26,7 @@ sliders.forEach((slider, i) => {
 
   function dragStart(e) {
     if (isSlide) return;
+    isClicking = false;
     isSlide = true;
     isDragStart = true;
     prevPageX = e.pageX || e.touches[0].pageX;
@@ -33,6 +36,7 @@ sliders.forEach((slider, i) => {
 
   function dragging(e) {
     if(!isDragStart) return;
+    isClicking = false;
     e.preventDefault();
     isDragging = true;
     slider.classList.add("dragging");
@@ -41,6 +45,7 @@ sliders.forEach((slider, i) => {
   }
 
   function dragStop() {
+    isClicking = false;
     isDragStart = false;
     slider.classList.remove("dragging");
     if(!isDragging) return;
@@ -56,4 +61,20 @@ sliders.forEach((slider, i) => {
   slider.addEventListener("mouseup", dragStop);
   slider.addEventListener("touchend", dragStop);
   slider.addEventListener("mouseleave", dragStop);
+
+  allSlides.forEach((slide) => {
+    slide.addEventListener("click", (event) => {
+      isDragStart = false;
+      isDragging = false;
+      isClicking = true;
+      isSlide = false;
+      if(isClicking) {
+        let closestParent = event.target.closest(".slider_item_container");
+        let contentContainer = closestParent.querySelector(".videoFrame");
+        let temp = contentContainer.children[0].src;
+        contentContainer.children[0].src = event.target.src;
+        event.target.src = temp;
+      }
+    });
+  })
 });

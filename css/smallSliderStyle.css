@@ -16,6 +16,9 @@
     padding: 0 20px 0 0;
     flex: 0 0 auto;
     width: calc(100% / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .slider__container[data-step="4"] .slider__item {
     width: calc(100% / 4);
@@ -53,4 +56,6 @@
     -moz-user-drag: none;
     -o-user-drag: none;
     user-select: none;
+    width: 333px;
+    height: 220px;
 }
