@@ -24,7 +24,7 @@ sliderNextButton.bind("click", () => {
     mySwiper.slideNext(1000);
 });
 
-document.addEventListener("click", (event) => {
+/*document.addEventListener("click", (event) => {
     if(event.target.closest(".swiper-slide") 
         || event.target.closest(".slider-buttons") 
             || event.target.closest(".swiper-button-prev") 
@@ -33,12 +33,12 @@ document.addEventListener("click", (event) => {
     } else {
         closeSlide();
     }
-});
+});*/
 
 if(window.screen.width >= 1100) {
     slidesList.forEach((elem) => {
-        elem.children[0].addEventListener("click", (event) => openSlide(event));
-        elem.children[1].addEventListener("click", (event) => openSlide(event));
+     //   elem.children[0].addEventListener("click", (event) => openSlide(event));
+     //   elem.children[1].addEventListener("click", (event) => openSlide(event));
         elem.addEventListener("mouseover", (event) => mouseOver(event, elem));
         elem.addEventListener("mouseout", (event) => mouseOut(event, elem));
     });
