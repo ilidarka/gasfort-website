@@ -1,10 +1,9 @@
-let slidesList = document.querySelectorAll(".swiper-slide");
-let slidesImagesList = document.querySelectorAll(".slider_item_container_images");
-let videosList = document.querySelectorAll(".videoFrame");
-let smallSlidersList = $(".small-slider-wrapper");
-let slidesIndicator = $(".slides-indicator");
-let sliderPrevButton = $(".swiper-button-prev");
-let sliderNextButton = $(".swiper-button-next");
+let slidesList = document.querySelectorAll('.swiper-slide');
+let videosList = document.querySelectorAll('.videoFrame');
+let smallSlidersList = $('.small-slider-wrapper');
+let slidesIndicator = $('.slides-indicator');
+let sliderPrevButton = $('.swiper-button-prev');
+let sliderNextButton = $('.swiper-button-next');
 
 let slidesCount = 2.5;
 let spaceBetweenSlides = 20;
@@ -12,129 +11,52 @@ let selectedSlideNumber = 1;
 
 let mySwiper;
 
-window.onload = function() {
+window.onload = function () {
     renderSlider();
-}
+};
 
-sliderPrevButton.bind("click", (event) => {
+sliderPrevButton.bind('click', (event) => {
     mySwiper.slidePrev(1000);
 });
 
-sliderNextButton.bind("click", () => {
+sliderNextButton.bind('click', () => {
     mySwiper.slideNext(1000);
 });
-
-/*document.addEventListener("click", (event) => {
-    if(event.target.closest(".swiper-slide") 
-        || event.target.closest(".slider-buttons") 
-            || event.target.closest(".swiper-button-prev") 
-                || event.target.closest(".swiper-button.next")) {
-        event.stopImmediatePropagation()
-    } else {
-        closeSlide();
-    }
-});*/
-
-if(window.screen.width >= 1100) {
+if (window.screen.width >= 1100) {
     slidesList.forEach((elem) => {
-     //   elem.children[0].addEventListener("click", (event) => openSlide(event));
-     //   elem.children[1].addEventListener("click", (event) => openSlide(event));
-        elem.addEventListener("mouseover", (event) => mouseOver(event, elem));
-        elem.addEventListener("mouseout", (event) => mouseOut(event, elem));
-    });
-    $(".slides-indicator").each(function(index) {
-        let dotNumber = index;
-        $(".slides-indicator").append('<img data-dotNumber="'+dotNumber+'" class="dots" src="./img/unactive-slide-indicator.svg" alt="unactive-slide-indicator" >');
-        $(".slides-indicator").eq(index).find(".dots").eq(index).attr("src", "./img/active-slide-indicator.svg");
-    });
-    $(".dots").bind("click", (event) => {
-        selectedSlideNumber = event.target.dataset.dotnumber;
-        renderSlider();
-    });
-    $(".slideCloseButton").bind("click", () => {
-        closeSlide();
+        elem.addEventListener('mouseover', (event) => mouseOver(event, elem));
+        elem.addEventListener('mouseout', (event) => mouseOut(event, elem));
     });
 } else {
     slidesCount = 1;
     renderSlider();
 }
-
-const openSlide = (event) => {
-    if(slidesCount === 2.5) {
-        slidesList.forEach((elem) => {
-            elem.classList.remove("scaled-slide-min");
-            elem.classList.remove("scaled-slide-max");
-            elem.children[1].children[1].classList.toggle("clicked-slide-images");
-        });
-        slidesCount = 1;
-        selectedSlideNumber = parseInt(event.target.closest(".swiper-slide").ariaLabel.split(" / ")[0]) - 1;
-        spaceBetweenSlides = 200;
-        slidesList.forEach((elem) => {
-            elem.classList.add("clicked-slide");
-            elem.children[1].classList.add("clicked-slider-item-container");
-            elem.children[1].children[0].classList.add("clicked-content");
-            elem.children[1].children[0].children[0].classList.add("clicked-videoFrame");
-            elem.children[1].children[0].children[1].style.display = "none";
-            elem.children[1].children[0].children[2].classList.add("clicked-sliderText");
-        });
-        smallSlidersList.css("display", "flex");
-        $(".slides-indicator").css("display", "flex");
-        $(".swiper-container").css("height", "830px");
-        $(".slideCloseButton").css("display", "block");
-        $(".slider_item_container_images").css("display", "none");
-        $(".slider-buttons").css("margin-top", "0");
-        renderSlider();
-    };
-};
-const closeSlide = () => {
-    if(slidesCount === 1) {
-        slidesCount = 2.5;
-        spaceBetweenSlides = 20;
-        slidesList.forEach((elem) => {
-            elem.classList.remove("clicked-slide");
-            elem.children[1].classList.remove("clicked-slider-item-container");
-            elem.children[1].children[0].classList.remove("clicked-content");
-            elem.children[1].children[0].children[0].classList.remove("clicked-videoFrame");
-            elem.children[1].children[0].children[1].style.display = "block";
-            elem.children[1].children[0].children[2].classList.remove("clicked-sliderText");
-        });
-        smallSlidersList.css("display", "none");
-        $(".slides-indicator").css("display", "none");
-        $(".swiper-container").css("height", "830px");
-        $(".slideCloseButton").css("display", "none");
-        $(".slider_item_container_images").css("display", "flex");
-        $(".slider-buttons").css("margin-top", "150px");
-        renderSlider();
-        mySwiper.slideReset(1000)
-    }
-};
-
 const mouseOver = (event, elem) => {
-    if(slidesCount === 2.5) {
+    if (slidesCount === 2.5) {
         slidesList.forEach((slide) => {
-            if(slide != elem) {
-                slide.classList.add("scaled-slide-min");
+            if (slide != elem) {
+                slide.classList.add('scaled-slide-min');
             } else {
-                slide.classList.add("scaled-slide-max");
+                slide.classList.add('scaled-slide-max');
             }
         });
     }
 };
 
 const mouseOut = (event, elem) => {
-    if(slidesCount === 2.5) {
+    if (slidesCount === 2.5) {
         slidesList.forEach((slide) => {
-            if(slide != elem) {
-                slide.classList.remove("scaled-slide-min");
+            if (slide != elem) {
+                slide.classList.remove('scaled-slide-min');
             } else {
-                slide.classList.remove("scaled-slide-max");
+                slide.classList.remove('scaled-slide-max');
             }
         });
     }
 };
 
 function renderSlider() {
-    mySwiper = new Swiper(".swiper-container", {
+    mySwiper = new Swiper('.swiper-container', {
         spaceBetween: spaceBetweenSlides,
         slidesPerView: slidesCount,
         initialSlide: selectedSlideNumber,
@@ -144,18 +66,18 @@ function renderSlider() {
         loopAdditionalSlides: 30,
         allowTouchMove: false,
     });
-    mySwiper.on("slideChange", (event) => {
-        if(mySwiper.activeIndex == 0) {
-            sliderPrevButton.css("opacity", "0.5");
-        } else if(mySwiper.activeIndex >= mySwiper.slides.length - 1) {
-            sliderNextButton.css("opacity", "0.5");
+    mySwiper.on('slideChange', (event) => {
+        if (mySwiper.activeIndex == 0) {
+            sliderPrevButton.css('opacity', '0.5');
+        } else if (mySwiper.activeIndex >= mySwiper.slides.length - 1) {
+            sliderNextButton.css('opacity', '0.5');
         } else {
-            sliderNextButton.css("opacity", "1");
-            sliderPrevButton.css("opacity", "1");
+            sliderNextButton.css('opacity', '1');
+            sliderPrevButton.css('opacity', '1');
         }
     });
-};
+}
 
 function setActiveSlide(slideNumber) {
     mySwiper.initialSlide = slideNumber;
-};
+}
