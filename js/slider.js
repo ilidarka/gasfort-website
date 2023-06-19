@@ -64,7 +64,7 @@ function renderSlider() {
         roundLengths: true,
         loop: false,
         loopAdditionalSlides: 30,
-        allowTouchMove: false,
+        allowTouchMove: true,
     });
     mySwiper.on('slideChange', (event) => {
         if (mySwiper.activeIndex == 0) {
